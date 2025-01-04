@@ -1,4 +1,4 @@
-import { KeyboardAvoidingView, View, TextInput, TouchableOpacity, Text, StyleSheet } from "react-native";
+import { KeyboardAvoidingView, View, TextInput, TouchableOpacity, Text, Platform, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native"
 import { FontAwesome } from "@expo/vector-icons"
 
@@ -14,7 +14,10 @@ export default function FormRegisterScreen(){
   };
 
   return(
-    <KeyboardAvoidingView style={styles.container}>
+    <KeyboardAvoidingView 
+      style={styles.container}
+      behavior={Platform.OS === 'ios' ? "padding" : "height"}
+    >
       <View style={styles.containerButton}>
         <TouchableOpacity style={styles.buttonBack} onPress={goBack}>
           <FontAwesome name="arrow-left" size={32} color="#FFF" />
@@ -24,22 +27,27 @@ export default function FormRegisterScreen(){
       <TextInput 
         style={styles.input}
         placeholder="Nome da Empresa"
+        placeholderTextColor="#000"
       />
       <TextInput 
         style={styles.input}
         placeholder="Whatsapp"
+        placeholderTextColor="#000"
       />
-      <TextInput 
+      <TextInput
         style={styles.input}
         placeholder="CPF ou CNPJ"
+        placeholderTextColor="#000"
       />
       <TextInput 
         style={styles.input}
         placeholder="Endereço"
+        placeholderTextColor="#000"
       />
       <TextInput 
         style={styles.inputArea}
         placeholder="Descrição:"
+        placeholderTextColor="#000"
         multiline={true}
         numberOfLines={4}
         textAlignVertical="top"

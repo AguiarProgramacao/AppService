@@ -17,10 +17,12 @@ export default function LoginScreen(){
       <TextInput 
         style={styles.input}
         placeholder="Seu Email"
+        placeholderTextColor="#000"
       />
       <TextInput 
         style={styles.input}
         placeholder="Sua Senha"
+        placeholderTextColor="#000"
       />
       <TouchableOpacity style={styles.button}>
         <Text style={styles.textButton}>Acessar</Text>
